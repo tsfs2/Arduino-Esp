@@ -1,0 +1,19 @@
+//setting max brightness to low brightness
+int LED1=6;//led verde
+int brightness=0;
+double randnumber;
+void setup() {
+  pinMode(LED1,OUTPUT);
+  Serial.begin(9600);
+}
+void loop() {
+  for(int i=0;i<255;i++){
+    analogWrite(LED1,i);
+    delay(10);
+  }
+  for(int i=255;i>=0;i--){
+    analogWrite(LED1,i);
+    delay(10);
+  }
+  delay(1000);
+}
