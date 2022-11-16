@@ -1,0 +1,46 @@
+//3 functions
+int LED1=6;//led verde
+int brightness=0;
+int randnumber;
+void setup() {
+  pinMode(LED1,OUTPUT);
+  Serial.begin(9600);
+}
+void mododecrescente(int LED1){
+  int i=255;
+    while(i>=0 && i<=255){
+    analogWrite(LED1,i);
+    i--;
+    delay(10);
+  }
+}
+void apagaracender(int LED1){
+  for(int i=0;i<=5;i++){
+    digitalWrite(LED1,HIGH);
+    delay(500);
+    digitalWrite(LED1,LOW);
+    delay(500);
+  }
+}
+void modocrescente(int LED1){
+    int i=0;
+  while(i>=0 && i<255){
+    analogWrite(LED1,i);
+    i++;
+    delay(10);
+  }
+}
+void loop() {
+  randnumber=random(1,4);
+  Serial.println("The number of the function is: \n");
+  Serial.println(randnumber);
+  if(randnumber==1){
+    modocrescente(LED1);
+  }
+  else if(randnumber==2){
+    mododecrescente(LED1);
+  }
+  else if(randnumber==3){
+    apagaracender(LED1);
+  }
+}
