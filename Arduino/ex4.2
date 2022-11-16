@@ -1,0 +1,22 @@
+//same thing but using while
+int LED1=6;//led verde
+int brightness=0;
+double randnumber;
+void setup() {
+  pinMode(LED1,OUTPUT);
+  Serial.begin(9600);
+}
+void loop() {
+  int i=0;
+  while(i>=0 && i<255){
+    analogWrite(LED1,i);
+    i++;
+    delay(10);
+  }
+  while(i>=0 && i<=255){
+    analogWrite(LED1,i);
+    i--;
+    delay(10);
+  }
+  delay(1000);
+}
