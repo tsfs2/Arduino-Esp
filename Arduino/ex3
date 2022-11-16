@@ -1,0 +1,16 @@
+//random time generator
+int LED1=6;//led verde
+double randnumber;
+void setup() {
+  pinMode(LED1,OUTPUT);
+  Serial.begin(9600);
+}
+void loop() {
+  randnumber=random(1000,3000);
+  Serial.println("The time generated is: ");
+  Serial.println(randnumber/1000);
+  digitalWrite(LED1,HIGH);
+  delay(randnumber);
+  digitalWrite(LED1,LOW);
+  delay(500);
+}
