@@ -1,0 +1,275 @@
+//program esp8266 7 leds and some fun functions
+int LED1=D0;
+int LED2=D1;
+int LED3=D3;
+int LED4=D4;
+int LED5=D5;
+int LED6=D6;
+int LED7=D7;
+void setup(){
+  pinMode(LED_BUILTIN,OUTPUT);
+  digitalWrite(LED_BUILTIN,HIGH);
+  pinMode(LED1,OUTPUT);
+  pinMode(LED2,OUTPUT);
+  pinMode(LED3,OUTPUT);
+  pinMode(LED4,OUTPUT);
+  pinMode(LED5,OUTPUT);
+  pinMode(LED6,OUTPUT);
+  pinMode(LED7,OUTPUT);
+  Serial.begin(9600);
+}
+void crescente(int LED1,int LED2,int LED3,int LED4,int LED5,int LED6,int LED7){
+  for(int i=0;i<255;i++){
+    analogWrite(LED1,10*i);
+    delay(1);
+    analogWrite(LED2,10*i);
+    delay(1);
+    analogWrite(LED3,10*i);
+    delay(1);
+    analogWrite(LED4,10*i);
+    delay(1);
+    analogWrite(LED5,10*i);
+    delay(1);
+    analogWrite(LED6,10*i);
+    delay(1);
+    analogWrite(LED7,10*i);
+    delay(1);
+  }
+}
+void decrescente(int LED1,int LED2,int LED3,int LED4,int LED5,int LED6,int LED7){
+    for(int i=255;i>0;i--){
+    analogWrite(LED1,10*i);
+    delay(1);
+    analogWrite(LED2,10*i);
+    delay(1);
+    analogWrite(LED3,10*i);
+    delay(1);
+    analogWrite(LED4,10*i);
+    delay(1);
+    analogWrite(LED5,10*i);
+    delay(1);
+    analogWrite(LED6,10*i);
+    delay(1);
+    analogWrite(LED7,10*i);
+    delay(1);
+  }
+}
+void apagaracender(int LED1,int LED2,int LED3,int LED4,int LED5,int LED6,int LED7){
+  for(int i=0;i<5;i++){
+  digitalWrite(LED1,LOW);
+  delay(100);
+  digitalWrite(LED2,LOW);
+  delay(100);
+  digitalWrite(LED3,LOW);
+  delay(100);
+  digitalWrite(LED4,LOW);
+  delay(100);
+  digitalWrite(LED5,LOW);
+  delay(100);
+  digitalWrite(LED6,LOW);
+  delay(100);
+  digitalWrite(LED7,LOW);
+  delay(100);
+  digitalWrite(LED1,HIGH);
+  delay(100);
+  digitalWrite(LED2,HIGH);
+  delay(100);
+  digitalWrite(LED3,HIGH);
+  delay(100);
+  digitalWrite(LED4,HIGH);
+  delay(100);
+  digitalWrite(LED5,HIGH);
+  delay(100);
+  digitalWrite(LED6,HIGH);
+  delay(100);
+  digitalWrite(LED7,HIGH);
+  }
+}
+void fortempo(int LED1,int LED2,int LED3,int LED4,int LED5,int LED6,int LED7){
+  for(int i=0;i<5;i++){
+  digitalWrite(LED1,LOW);
+  delay(1+50*i);
+  digitalWrite(LED1,HIGH);
+  delay(1+50*i);
+  digitalWrite(LED2,LOW);
+  delay(1+50*i);
+  digitalWrite(LED2,HIGH);
+  delay(1+50*i);
+  digitalWrite(LED3,LOW);
+  delay(1+50*i);
+  digitalWrite(LED3,HIGH);
+  delay(1+50*i);
+  digitalWrite(LED4,LOW);
+  delay(1+50*i);
+  digitalWrite(LED4,HIGH);
+  delay(1+50*i);
+  digitalWrite(LED5,LOW);
+  delay(1+50*i);
+  digitalWrite(LED5,HIGH);
+  delay(1+50*i);
+  digitalWrite(LED6,LOW);
+  delay(1+50*i);
+  digitalWrite(LED6,HIGH);
+  delay(1+50*i);
+  digitalWrite(LED7,LOW);
+  delay(1+50*i);
+  digitalWrite(LED7,HIGH);
+  delay(1+50*i);
+  }
+}
+void irvir(int LED1,int LED2,int LED3,int LED4,int LED5,int LED6,int LED7){
+  for(int i=0;i<5;i++){
+  digitalWrite(LED1,LOW);
+  delay(100);
+  digitalWrite(LED1,HIGH);
+  delay(100);
+  digitalWrite(LED2,LOW);
+  delay(100);
+  digitalWrite(LED2,HIGH);
+  delay(100);
+  digitalWrite(LED3,LOW);
+  delay(100);
+  digitalWrite(LED3,HIGH);
+  delay(100);
+  digitalWrite(LED4,LOW);
+  delay(100);
+  digitalWrite(LED4,HIGH);
+  delay(100);
+  digitalWrite(LED5,LOW);
+  delay(100);
+  digitalWrite(LED5,HIGH);
+  delay(100);
+  digitalWrite(LED6,LOW);
+  delay(100);
+  digitalWrite(LED6,HIGH);
+  delay(100);
+  digitalWrite(LED7,LOW);
+  delay(100);
+  digitalWrite(LED7,HIGH);
+  delay(100);
+  digitalWrite(LED6,LOW);
+  delay(100);
+  digitalWrite(LED6,HIGH);
+  delay(100);
+  digitalWrite(LED5,LOW);
+  delay(100);
+  digitalWrite(LED5,HIGH);
+  delay(100);
+  digitalWrite(LED4,LOW);
+  delay(100);
+  digitalWrite(LED4,HIGH);
+  delay(100);
+  digitalWrite(LED3,LOW);
+  delay(100);
+  digitalWrite(LED3,HIGH);
+  delay(100);
+  digitalWrite(LED2,LOW);
+  delay(100);
+  digitalWrite(LED2,HIGH);
+  delay(100);
+  digitalWrite(LED1,LOW);
+  delay(100);
+  digitalWrite(LED1,HIGH);
+  delay(100);
+  }
+}
+void fortempoinvertido(int LED1,int LED2,int LED3,int LED4,int LED5,int LED6,int LED7){
+  for(int i=20;i>0;i--){
+  digitalWrite(LED1,LOW);
+  delay(10*i);
+  digitalWrite(LED1,HIGH);
+  delay(10*i);
+  digitalWrite(LED2,LOW);
+  delay(10*i);
+  digitalWrite(LED2,HIGH);
+  delay(10*i);
+  digitalWrite(LED3,LOW);
+  delay(10*i);
+  digitalWrite(LED3,HIGH);
+  delay(10*i);
+  digitalWrite(LED4,LOW);
+  delay(10*i);
+  digitalWrite(LED4,HIGH);
+  delay(10*i);
+  digitalWrite(LED5,LOW);
+  delay(10*i);
+  digitalWrite(LED5,HIGH);
+  delay(10*i);
+  digitalWrite(LED6,LOW);
+  delay(10*i);
+  digitalWrite(LED6,HIGH);
+  delay(10*i);
+  digitalWrite(LED7,LOW);
+  delay(10*i);
+  digitalWrite(LED7,HIGH);
+  delay(10*i);
+  }
+}
+void irvirfixe(int LED1,int LED2,int LED3,int LED4,int LED5,int LED6,int LED7){
+  for(int i=0;i<5;i++){
+  digitalWrite(LED1,LOW);
+  delay(100);
+  digitalWrite(LED2,LOW);
+  delay(100);
+  digitalWrite(LED3,LOW);
+  delay(100);
+  digitalWrite(LED4,LOW);
+  delay(100);
+  digitalWrite(LED5,LOW);
+  delay(100);
+  digitalWrite(LED6,LOW);
+  delay(100);
+  digitalWrite(LED7,LOW);
+  delay(100);
+  digitalWrite(LED1,HIGH);
+  delay(100);
+  digitalWrite(LED2,HIGH);
+  delay(100);
+  digitalWrite(LED3,HIGH);
+  delay(100);
+  digitalWrite(LED4,HIGH);
+  delay(100);
+  digitalWrite(LED5,HIGH);
+  delay(100);
+  digitalWrite(LED6,HIGH);
+  delay(100);
+  digitalWrite(LED7,HIGH);
+  digitalWrite(LED7,LOW);
+  delay(100);
+  digitalWrite(LED6,LOW);
+  delay(100);
+  digitalWrite(LED5,LOW);
+  delay(100);
+  digitalWrite(LED4,LOW);
+  delay(100);
+  digitalWrite(LED3,LOW);
+  delay(100);
+  digitalWrite(LED2,LOW);
+  delay(100);
+  digitalWrite(LED1,LOW);
+  delay(100);
+  digitalWrite(LED7,HIGH);
+  delay(100);
+  digitalWrite(LED6,HIGH);
+  delay(100);
+  digitalWrite(LED5,HIGH);
+  delay(100);
+  digitalWrite(LED4,HIGH);
+  delay(100);
+  digitalWrite(LED3,HIGH);
+  delay(100);
+  digitalWrite(LED2,HIGH);
+  delay(100);
+  digitalWrite(LED1,HIGH);
+  delay(100);
+  }
+}
+void loop(){
+crescente(LED1,LED2,LED3,LED4,LED5,LED6,LED6);
+decrescente(LED1,LED2,LED3,LED4,LED5,LED6,LED7);
+apagaracender(LED1,LED2,LED3,LED4,LED5,LED6,LED7);
+fortempo(LED1,LED2,LED3,LED4,LED5,LED6,LED7);
+fortempoinvertido(LED1,LED2,LED3,LED4,LED5,LED6,LED7);
+irvir(LED1,LED2,LED3,LED4,LED5,LED6,LED7);
+irvirfixe(LED1,LED2,LED3,LED4,LED5,LED6,LED7);
+}
