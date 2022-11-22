@@ -1,0 +1,70 @@
+//Comands used:
+//pinMode() leds are outputs
+//leds[ledCount] array
+//Serial.begin(9600) velocity
+//digitalWrite() turn on or off leds
+//delay() time
+//analogWrite()  used to configurate the brightness
+int ledCount=7;
+int leds[7]={D0,D1,D3,D4,D5,D6,D7};
+void setup(){
+  for (int i = 0; i < ledCount; i++) {
+  pinMode(leds[i], OUTPUT);
+}
+  Serial.begin(9600);
+}
+void loop(){
+  for (int i = 0; i < ledCount; i++){
+    digitalWrite(leds[i],HIGH);
+    delay(100);
+    digitalWrite(leds[i],LOW);
+    delay(100);
+    digitalWrite(leds[i],HIGH);
+    delay(100);
+    digitalWrite(leds[i],LOW);
+  }
+  for(int i=0;i<ledCount;i++){
+    digitalWrite(leds[i+2],HIGH);
+    digitalWrite(leds[i],HIGH);
+    digitalWrite(leds[i-2],HIGH);
+    delay(100);
+    digitalWrite(leds[i+2],LOW);
+    digitalWrite(leds[i],LOW);
+    digitalWrite(leds[i-2],LOW);
+  }
+  for(int i=0;i<ledCount;i++){
+    digitalWrite(leds[i+1],HIGH);
+    delay(100);
+    digitalWrite(leds[i+1],LOW);
+    delay(100);
+    digitalWrite(leds[i],HIGH);
+    delay(100);
+    digitalWrite(leds[i],LOW);
+    delay(100);
+  }
+  for(int n=0;n<2;n++){
+    for(int i=0;i<ledCount;i++){
+      digitalWrite(leds[i],HIGH);
+      delay(100);
+    }
+    for(int i=ledCount;i>0;i--){
+      digitalWrite(leds[i],LOW);
+      delay(100);
+    }
+  }
+  for(int n=0;n<2;n++){
+    for(int i=0;i<ledCount;i++){
+      digitalWrite(leds[i],HIGH);
+      delay(100);
+      digitalWrite(leds[i],LOW);
+      delay(100);
+    }
+    for(int i=ledCount;i>0;i--){
+      digitalWrite(leds[i],HIGH);
+      delay(100);
+      digitalWrite(leds[i],LOW);
+      delay(100);
+    }
+  }
+}
+//github.com/tsfs2
