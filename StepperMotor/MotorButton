@@ -1,0 +1,24 @@
+#include <AFMotor.h>
+int LEDVerde=A5;
+int button=A4;
+int temp=0;
+AF_Stepper motor(48,1);//360/48=7.5 graus 
+void setup(){
+  pinMode(LEDVerde,OUTPUT);
+  pinMode(button,INPUT);
+  Serial.begin(9600);
+  Serial.println("Inicio Stepper test");
+  motor.setSpeed(255); //10 rotacoes por minuto
+}
+void loop(){
+  temp=digitalRead(button);
+  if(temp==HIGH){
+  Serial.println("Single coil steps");
+  digitalWrite(LEDVerde,1);
+  motor.step(100,FORWARD,SINGLE);
+  }
+  else{
+  digitalWrite(LEDVerde,0);
+  motor.step(100,BACKWARD,SINGLE);
+  }
+}
