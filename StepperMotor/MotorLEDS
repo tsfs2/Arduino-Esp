@@ -1,0 +1,26 @@
+#include <AFMotor.h>
+int LEDVerde=A5;
+int LEDVermelho=A4;
+AF_Stepper motor(48,1);//360/48=7.5 graus 
+void setup(){
+  pinMode(LEDVerde,OUTPUT);
+  pinMode(LEDVermelho,OUTPUT);
+  Serial.begin(9600);
+  //int potenciometro=analogRead(A4);
+  Serial.println("Inicio Stepper test");
+  motor.setSpeed(255); //10 rotacoes por minuto
+}
+void loop(){
+  //int potenciometro=analogRead(A4);
+  Serial.println("Single coil steps");
+  //Serial.println(potenciometro);
+  //int valor;
+  //valor=potenciometro/40;
+  digitalWrite(LEDVerde,1);
+  motor.step(100,FORWARD,SINGLE);
+  digitalWrite(LEDVerde,0);
+  delay(100);
+  digitalWrite(LEDVermelho,1);
+  motor.step(100,BACKWARD,SINGLE);
+  digitalWrite(LEDVermelho,0);
+}
