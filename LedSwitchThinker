@@ -1,0 +1,75 @@
+//now with switch cases
+int LED1=A1;//led verde
+int brightness=0;
+int data=0;
+bool visi = false;
+void setup() {
+  pinMode(LED1,OUTPUT);
+  Serial.begin(9600);
+}
+void mododecrescente(int LED1){
+  int i=255;
+    while(i>=0 && i<=255){
+    analogWrite(LED1,i);
+    i--;
+    delay(25);
+  }
+}
+void apagaracender(int LED1){
+  for(int i=0;i<=5;i++){
+    digitalWrite(LED1,HIGH);
+    delay(500);
+    digitalWrite(LED1,LOW);
+    delay(500);
+  }
+}
+void modocrescente(int LED1){
+    int i=0;
+  while(i>=0 && i<255){
+    analogWrite(LED1,i);
+    i++;
+    delay(25);
+  }
+}
+void loop() {
+  if(!visi){
+  	Serial.print("Say a b or c: \n");  
+  	visi = true;
+  }
+  if (Serial.available()>0){
+    visi = false;
+    int state=Serial.read();
+    Serial.print("The choice made was: ");
+    if(state==97 || state==65){
+      Serial.print("a\n");
+    }
+    else if(state==66 || state==98){
+      Serial.print("b\n");
+    }
+    else{
+      Serial.print("c\n");
+    }
+    if(state==65 || state==97){
+      modocrescente(LED1);
+    }
+    else if(state==66 || state==98){
+      mododecrescente(LED1);
+    }
+    else{
+      apagaracender(LED1);
+    }
+    
+    //*  switch(state){
+    //case 1:
+    //modocrescente(LED1);
+
+    //break;
+    //case 2:
+    //mododecrescente(LED1);
+
+    //break;
+    //case 3:
+    //apagaracender(LED1);
+    //break;
+  }
+  }
