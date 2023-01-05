@@ -1,0 +1,54 @@
+#include <AFMotor.h>
+int LED15=A4;
+int LED30=A5;
+int LED45=A2;
+int LED60=A3;
+double steps = 3.6;
+
+AF_Stepper motor (60,1); //360 / 6 (graus em cada divisão)
+
+void setup(){
+  Serial.begin(9600);
+  motor.setSpeed(100);
+}
+void leds15(){
+  for (int i=0; i<15; i++){
+  motor.step(steps, BACKWARD , SINGLE);
+    delay(1000);
+  }
+  }
+void leds30(){
+  for (int i=15; i<30; i++){
+  motor.step(steps, BACKWARD , SINGLE);
+    delay(1000);
+  }
+  }
+void leds45(){
+  for (int i=30; i<45; i++){
+  motor.step(steps, BACKWARD , SINGLE);
+    delay(1000);
+  }
+  }
+void leds60(){
+  for (int i=45; i<60; i++){
+  motor.step(steps, BACKWARD , SINGLE);
+    delay(1000);
+  }
+  }
+void motorparado(){
+  motor.step(0,BACKWARD,SINGLE);
+}
+void loop(){
+  leds15();
+  digitalWrite(LED15,HIGH);
+  leds30();
+  digitalWrite(LED30,HIGH);
+  leds45();
+  digitalWrite(LED45,HIGH);
+  leds60();
+  digitalWrite(LED60,HIGH);
+  digitalWrite(LED15,LOW);
+  digitalWrite(LED30,LOW);
+  digitalWrite(LED45,LOW);
+  digitalWrite(LED60,LOW);
+}  
